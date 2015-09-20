@@ -1,0 +1,41 @@
+{
+	"config_version": "4",
+	"name": "Glance",
+	"author": "ravi.mamidipalli@gmail.com",
+	"version": "0.1",
+	"platform_version": "v2.2.16",
+	"description": "A location sharing app",
+	"core": {
+		"general": {
+			"logging": {
+				"level": "DEBUG"
+			},
+			"reload": true
+		},
+		"android": {
+			"disable_ics_acceleration": true,
+			"minimum_version": "15"
+		}
+	},
+	"modules": {
+		"geolocation": {
+			"version": "2.1",
+			"config": {}
+		},
+		"contact": {
+			"version": "2.6"
+		},
+		"sms": {
+			"version": "2.3"
+		},
+		"launchimage": {
+			"version": "2.8",
+			"config": {
+				"background-color": "#7FFFD4",
+				"background-size": "auto",
+				"android": "key.png",
+				"android-landscape": "key.png"
+			}
+		}
+	}
+}

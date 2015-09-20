@@ -1,0 +1,10 @@
+{
+	"general": {},
+	"android": {
+		"profiles": {
+			"DEFAULT": {}
+		},
+		"sdk": "C:\\Users\\Ravi.Hima-PC\\AndroidSDK\\AppData\\Local\\Android\\sdk",
+		"device": "06E076F6BF651FF6FEF65A191569147"
+	}
+}
