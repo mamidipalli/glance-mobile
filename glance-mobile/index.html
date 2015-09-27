@@ -5,39 +5,21 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flat-ui.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAiVE0gllW4h5h9KGWTMfHV9EJVV3WuOs&sensor=true"></script>
+    <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/mapping.js"></script> 
     <script src="js/controllers.js"></script>
-    <script src="js/directives.js"></script>
   </head>
 
-  <body ng-app="starter">
-     <ion-nav-view></ion-nav-view>
-   <!-- <ion-header-bar class="bar-stable">
-      <h1 class="title">Glance</h1>
-    </ion-header-bar>
-
-    <ion-content scroll="false">
-      <map on-create="mapCreated(map)"></map>
-    </ion-content>
-
-    <ion-footer-bar class="bar-stable">
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
-    </ion-footer-bar> -->
+  <body ng-app="glance">
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
   </body>
 </html>
