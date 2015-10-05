@@ -1,0 +1,33 @@
+<ion-view view-title="Glance">
+  <ion-nav-bar class="bar-positive nav-title-slide-ios7" align-title="center">
+    <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+        <button class="button button-royal button-block ion-social-googleplus" ng-click="doSocialLogin('google')" ng-controller="AppCtrl"></button>
+        <label>
+          Or
+        </label>
+    
+  <form ng-submit="doSocialLogin('facebook')" ng-controller="AppCtrl">
+        <button class="button button-royal button-block ion-social-facebook" type="submit"></button>
+        <label>
+          Or
+        </label>
+  </form>
+    <form ng-submit="doLoginEmail()" ng-controller="AppCtrl">
+      <div class="list">
+        <label class="item item-input">
+          <input type="email" placeholder="Email" ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="loginData.password">
+        </label>
+      </div>
+      <br></br>
+      <a href="#/resetpassword">Forgot password</a>
+      <br></br>
+      <button class="button button-royal button-block" type="submit">Sign in</button>
+    </form>
+    <!--href="#/app.map"  ng-click="resetPassword()" ng-controller="AppCtrl"-->
+  </ion-content>
+</ion-view>
