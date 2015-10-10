@@ -3,6 +3,17 @@
     <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
   </ion-nav-bar>
   <ion-content class="padding">
+     <button class="button button-royal button-block ion-social-googleplus" ng-click="doSocialLogin('google')" ng-controller="AppCtrl"></button>
+        <label>
+          Or
+        </label>
+    
+  <form ng-submit="doSocialLogin('facebook')" ng-controller="AppCtrl">
+        <button class="button button-royal button-block ion-social-facebook" type="submit"></button>
+        <label>
+          Or
+        </label>
+  </form>
     <form ng-submit="doRegister()" ng-controller="AppCtrl">
       <div class="list">
         <label class="item item-input">
