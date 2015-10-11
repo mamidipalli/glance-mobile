@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.directives', 'ngResource'])
+angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.directives', 'ngResource', 'ngCordova'])
 
   .factory("Auth", function ($firebaseAuth) {
     var usersRef = new Firebase("https//on-demand.firebaseio.com/users");
@@ -39,6 +39,10 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     );
   }
 ])
+.factory("glancesms", function($resource) {
+    return $resource("https://lu4sdhzvbi.execute-api.us-west-2.amazonaws.com/dev/sms/send"
+    );
+  })
   
 
   .config(function ($stateProvider, $urlRouterProvider) {

@@ -96,8 +96,9 @@ angular.module('starter.controllers', ['ionic', 'firebase'])
   .controller('PlaylistCtrl', function ($scope, $stateParams) {
   })
 
-  .controller('MapCtrl', function ($scope, $ionicLoading, $http, glancepub) {
-
+  .controller('MapCtrl', function ($scope, $ionicLoading, $http, glancepub, glancesms, $cordovaContacts) {
+     $http.defaults.headers.common['x-api-key'] = 'SNriDHrilP2i8MqyAypVtA8ZsyzVdy39z7USppI7';
+     
     $scope.mapCreated = function (map) {
       console.log("*** In map created ***");
       $scope.map = map;
@@ -127,6 +128,27 @@ angular.module('starter.controllers', ['ionic', 'firebase'])
 
     $scope.shareMe = function () {
       console.log("Share Me");
+      
+     
+    $cordovaContacts.pickContact().then(function(contact) {
+        console.log("selected contact::"+JSON.stringify(contact.phoneNumbers));
+       
+        contact.phoneNumbers.forEach(function(contactNumber) {
+          console.log("phones::"+JSON.stringify(contactNumber));
+          if(contactNumber.type == 'mobile'){
+            console.log("Value-->"+contactNumber.value);
+            glancesms.save({"to":contactNumber.value,"msg":'Watch me at http://geobus.s3-website-us-west-2.amazonaws.com/'});
+          }
+        });
+        
+        
+    },function(err){
+        console.log('Error: ' + err);
+    });
+    
+     /* $cordovaContacts.find({multiple: true}).then(function(result) {
+        console.log("Selected Contacts::"+result);
+    });*/
 
       navigator.geolocation.watchPosition(function (pos) {
         
@@ -137,7 +159,7 @@ angular.module('starter.controllers', ['ionic', 'firebase'])
           map: $scope.map
         });
 
-        $http.defaults.headers.common['x-api-key'] = 'SNriDHrilP2i8MqyAypVtA8ZsyzVdy39z7USppI7';
+       
         console.log("Map Lat-->" + $scope.map.getCenter().lat());
         console.log("Map Lng-->" + $scope.map.getCenter().lng());
         var msg = '{"lat":' + $scope.map.getCenter().lat() + ',"lng":' + $scope.map.getCenter().lng() + '}';
